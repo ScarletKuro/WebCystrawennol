@@ -48,22 +48,21 @@ namespace WebCystrawennol
         [STAThread]
         private static void Main(string[] args)
         {
-            //EMT();
-            try
-            {
+            //try
+            //{
                 //WebBrowserExt.SetFeatureBrowserEmulation(); // enable HTML5
                 var cts = new CancellationTokenSource((int)TimeSpan.FromMinutes(3).TotalMilliseconds);
-                var createInstance = new List<BaseScrap> { new Tele2(), new Emt() };
+            var createInstance = new List<BaseScrap> {new Tele2()};//{new Elisa(), new Tele2(), new Emt() };
                 var task = ScrapSitesAsync(createInstance, cts.Token);
                 task.Wait(cts.Token);
-            }
-            catch (Exception ex)
-            {
-                while (ex is AggregateException && ex.InnerException != null)
-                    ex = ex.InnerException;
-                Console.WriteLine(ex.Message);
-                Environment.Exit(-1);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+              //  while (ex is AggregateException && ex.InnerException != null)
+                //    ex = ex.InnerException;
+                //Console.WriteLine(ex.Message);
+                //Environment.Exit(-1);
+            //}
             Console.WriteLine("Press Enter to exit...");
             Console.ReadLine();
         }
