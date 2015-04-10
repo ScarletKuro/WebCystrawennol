@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace WebCystrawennol.Model
@@ -26,6 +25,8 @@ namespace WebCystrawennol.Model
         }
         public class Device
         {
+            [JsonProperty("shop")]
+            public string ShopName { get; set; }
             [JsonProperty("product_name")]
             public string Name { get; set; }
             [JsonProperty("img_url")]
@@ -33,13 +34,6 @@ namespace WebCystrawennol.Model
             [JsonProperty("product_price")]
             public IList<DevicePrice> ProductPrice { get; set; }
             
-        }
-        public class RootObject
-        {
-            [JsonProperty("shop")]
-            public string ShopName { get; set; }
-            [JsonProperty("items")]
-            public IList<Device> Items { get; set; }
         }
     }
 }

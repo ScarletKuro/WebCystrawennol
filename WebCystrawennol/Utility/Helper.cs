@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace WebCystrawennol.Utility
 {
@@ -14,14 +9,18 @@ namespace WebCystrawennol.Utility
         /// </summary>
         /// <param name="value">Ссылка, которую нужно обработать</param>
         /// <returns>Чстый текс без тегов</returns>
-        public static string ScrubHtml(string value)
+        public static string ScrubHtml(this string value)
         {
             var step1 = Regex.Replace(value, @"<[^>]+>|&nbsp;", "").Trim();
             var step2 = Regex.Replace(step1, @"\s{2,}", " ");
             return step2;
         }
-
-        public static string GeNumsFromStr(this string value)
+        /// <summary>
+        /// Оставляет только цифры в string
+        /// </summary>
+        /// <param name="value">Текст, который нужно обработать</param>
+        /// <returns>Числа без текста</returns>
+        public static string GetNumsFromStr(this string value)
         {
             var resultString = Regex.Match(value, @"\d+").Value;
             return resultString;
