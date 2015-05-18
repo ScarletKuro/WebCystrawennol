@@ -13,6 +13,7 @@ namespace WebCystrawennol
 
         public SmartWebClient(int maxConcurentConnectionCount = 50)
         {
+            Encoding = Encoding.UTF8;
             this._maxConcurentConnectionCount = maxConcurentConnectionCount;
         }
 

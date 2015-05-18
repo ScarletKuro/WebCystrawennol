@@ -49,7 +49,7 @@ namespace WebCystrawennol
             {
                 Console.WriteLine("Finally");
                 swatch.Stop();
-                //Save(u);
+                Save(u);
                 Console.WriteLine(swatch.Elapsed); 
             });
         }

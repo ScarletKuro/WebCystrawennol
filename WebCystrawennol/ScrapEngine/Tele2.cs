@@ -62,7 +62,7 @@ namespace WebCystrawennol.ScrapEngine
                 {
                     ShopName = "Tele2",
                     Name = productname,
-                    ImageUrl = extra["image"],
+                    ImageUrl =string.Format("https://pood.tele2.ee{0}",extra["image"]),
                     ProductPrice = new List<SaveToJson.DevicePrice>()
                      {
                          new SaveToJson.DevicePrice()
