@@ -17,8 +17,14 @@ namespace WebCystrawennol.Model
         }
         public class Result
         {
+            [JsonProperty("storageCode")]
+            public string storageCode { get; set; }
+            [JsonProperty("seoUrl")]
+            public string seoUrl { get; set; }
             [JsonProperty("model")]
             public string model { get; set; }
+            [JsonProperty("vendor")]
+            public string vendor { get; set; }
             [JsonProperty("price")]
             public double price { get; set; }
             [JsonProperty("customerPrice")]

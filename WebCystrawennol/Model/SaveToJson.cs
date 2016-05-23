@@ -24,6 +24,10 @@ namespace WebCystrawennol.Model
         {
             [JsonProperty("shop")]
             public string ShopName { get; set; }
+            [JsonProperty("vendor")]
+            public string Vendor { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
             [JsonProperty("product_name")]
             public string Name { get; set; }
             [JsonProperty("img_url")]

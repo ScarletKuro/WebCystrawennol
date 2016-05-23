@@ -37,7 +37,9 @@ namespace WebCystrawennol.ScrapEngine
                 {
                     ShopName = "Elisa",
                     Name = device.model,
+                    Vendor = device.vendor,
                     ImageUrl = string.Format("https://pilt.elisa.ee/{0}", device.coverPhotoFilename),
+                    Url = string.Format("https://pood.elisa.ee/webshop/private/device/{0}/{1}", device.seoUrl, device.storageCode),
                     ProductPrice = new List<SaveToJson.DevicePrice>()
                     {
                         new SaveToJson.DevicePrice()

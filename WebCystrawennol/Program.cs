@@ -13,7 +13,7 @@ namespace WebCystrawennol
     {
         public static void Save(List<SaveToJson.Device> device)
         {
-            var jsonDevice = JsonConvert.SerializeObject(device);
+            var jsonDevice = JsonConvert.SerializeObject(device, Formatting.Indented);
             System.IO.File.WriteAllText(@"C:\Users\Shinigami\Fizzler\tele2.txt", jsonDevice);
         }
         private static void StartScraping()
@@ -21,17 +21,10 @@ namespace WebCystrawennol
             var u = new List<SaveToJson.Device>();
             var swatch = new System.Diagnostics.Stopwatch();
             swatch.Start();
-            //var root = new Model.SaveToJson.RootObject()
-            //{
-            //    ShopName = "Tele2",
-            //    Items = Stuffs
-            //};
-            //var jsonDevice = JsonConvert.SerializeObject(root);
-            //System.IO.File.WriteAllText(@"C:\Users\Shinigami\Fizzler\tele2.txt", jsonDevice);
 
             var siteList = new List<BaseScrap>
             {
-                new Emt(),
+                //new Elion(),
                 new Tele2(),
                 new Elisa()
             };
